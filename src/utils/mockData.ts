@@ -1,4 +1,5 @@
 import { Book, Review, UserProfile } from '../types';
+import { useUser } from "@clerk/clerk-react";
 
 export const mockBooks: Book[] = [
   {
