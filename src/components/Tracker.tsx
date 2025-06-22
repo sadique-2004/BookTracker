@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, Flame, Star } from 'lucide-react';
-import StreakBadge3D from './TrackerComponents/StreakBadge3d';
 import StreakStats from './TrackerComponents/StreakStats';
 import StreakChart from './TrackerComponents/StreakChart';
 import { mockUser } from '../utils/mockData';
@@ -12,14 +11,33 @@ const Tracker: React.FC = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const getStreakMessage = (streak: number) => {
+    if (streak >= 100) return "Legendary Reader! 🏆";
+    if (streak >= 50) return "Reading Champion! 🎉";
+    if (streak >= 30) return "On Fire! 🔥";
+    if (streak >= 14) return "Great Progress! 💪";
+    if (streak >= 7) return "Building Momentum! 📚";
+    return "Getting Started! 🌱";
+  };
+
+  const getStreakEmoji = (streak: number) => {
+    if (streak >= 50) return "🏆";
+    if (streak >= 30) return "🔥";
+    if (streak >= 14) return "⭐";
+    if (streak >= 7) return "📚";
+    return "🌱";
+  };
+
   return (
     <div className={`min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-4 py-8">
+
         
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 mb-8 overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 to-purple-500/5" />
           <div className="relative z-10">
-            
+
         
             {/* Streak comparison */}
             <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6">

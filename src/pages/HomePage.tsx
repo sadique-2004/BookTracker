@@ -4,6 +4,7 @@ import { ChevronRight, BookOpen, Target, TrendingUp, Sparkles, Star } from 'luci
 import {useRef, useEffect} from 'react';
 import Typed from 'typed.js';
 
+import StreakBadge3D from '../components/TrackerComponents/StreakBadge3d';
 import { mockUser, featuredBooks, trendingGenres } from '../utils/mockData';
 import { useUser } from "@clerk/clerk-react";
 import Tracker from "./../components/Tracker"
@@ -54,7 +55,14 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </div>
-
+      
+    {/* 3D Badge */}
+    <div className="mb-8">
+      <StreakBadge3D 
+        current={mockUser.streak.current} 
+        best={mockUser.streak.best} 
+      />
+    </div>
       <Tracker/>
 
       {/* Featured Books Carousel */}
