@@ -3,6 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, Home, Library, PenTool, Settings, Menu, X, Flame, User, LogIn } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { mockUser } from '../utils/mockData';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,10 +79,29 @@ const Navbar: React.FC = () => {
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-2">
-              <button className="flex items-center space-x-2 px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200">
+              
+
+              <SignedOut>
+              <SignInButton mode="modal" >
+                <button className="flex items-center space-x-2 px-4 py-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all duration-200">
                 <LogIn className="h-4 w-4" />
                 <span className="text-sm font-medium">Login</span>
               </button>
+              </SignInButton>
+            </SignedOut>
+
+            <SignedIn>
+              <div className="flex items-center space-x-2">
+                <UserButton
+                  appearance={{
+                    elements: {
+                      avatarBox: "h-8 w-8", // Size of avatar
+                    },
+                  }}
+                  afterSignOutUrl="/"
+                />
+              </div>
+            </SignedIn>
               {/* <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
                 <User className="h-4 w-4" />
                 <span className="text-sm font-medium">Sign Up</span>
