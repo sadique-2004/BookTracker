@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import LibraryPage from "./pages/LibraryPage";
+import FeaturedBooks from "./pages/FeaturedBooks";
 import BookDetailPage from "./pages/BookDetailPage";
 import ReviewNotesPage from "./pages/ReviewNotesPage";
 import SettingsPage from "./pages/SettingsPage";
@@ -24,6 +25,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/library" element={<LibraryPage />} />
+                <Route path="/feature" element={<FeaturedBooks />} />
                 <Route path="/book/:id" element={<BookDetailPage />} />
                 <Route path="/review" element={<ReviewNotesPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
