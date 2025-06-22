@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, BookOpen, Target, TrendingUp, Sparkles, Star } from 'lucide-react';
 import { mockUser, featuredBooks, trendingGenres } from '../utils/mockData';
+import { useUser } from "@clerk/clerk-react";
 
 const HomePage: React.FC = () => {
+  const { user } = useUser();
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
       {/* Hero Section */}
@@ -13,7 +15,7 @@ const HomePage: React.FC = () => {
             <div className="inline-flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-full px-4 py-2 shadow-sm border border-gray-200 dark:border-gray-700 mb-6">
               <Sparkles className="h-4 w-4 text-yellow-500" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Welcome back, {mockUser.name}!
+                Welcome back, {user?.username}!
               </span>
             </div>
             
