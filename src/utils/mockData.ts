@@ -1,4 +1,5 @@
 import { Book, Review, UserProfile } from '../types';
+import { useUser } from "@clerk/clerk-react";
 
 export const mockBooks: Book[] = [
   {
@@ -27,7 +28,7 @@ export const mockBooks: Book[] = [
     title: 'Atomic Habits',
     author: 'James Clear',
     genre: ['Self-Help', 'Productivity', 'Psychology'],
-    coverUrl: 'https://images.pexels.com/photos/1301717/pexels-photo-1301717.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop',
+    coverUrl: 'https://images.pexels.com/photos/1130980/pexels-photo-1130980.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop',
     description: 'An Easy & Proven Way to Build Good Habits & Break Bad Ones. Transform your life through the power of small, consistent changes.',
     status: 'completed',
     rating: 5,
