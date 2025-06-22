@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
               </span>
             </div>
             
-            <button
+            {/* <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               aria-label="Toggle theme"
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
               ) : (
                 <span className="text-lg">☀️</span>
               )}
-            </button>
+            </button> */}
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-2">
@@ -77,10 +77,10 @@ const Navbar: React.FC = () => {
                 <LogIn className="h-4 w-4" />
                 <span className="text-sm font-medium">Login</span>
               </button>
-              <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
+              {/* <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
                 <User className="h-4 w-4" />
                 <span className="text-sm font-medium">Sign Up</span>
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -136,10 +136,10 @@ const Navbar: React.FC = () => {
                 <LogIn className="h-5 w-5" />
                 <span>Login</span>
               </button>
-              <button className="w-full flex items-center space-x-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
+              {/* <button className="w-full flex items-center space-x-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200">
                 <User className="h-5 w-5" />
                 <span>Sign Up</span>
-              </button>
+              </button> */}
             </div>
             
             {/* Mobile Streak Display */}
