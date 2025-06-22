@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, BookOpen, Target, TrendingUp, Sparkles, Star } from 'lucide-react';
 import { mockUser, featuredBooks, trendingGenres } from '../utils/mockData';
 import { useUser } from "@clerk/clerk-react";
+import Tracker from "./../components/Tracker"
 
 const HomePage: React.FC = () => {
   const { user } = useUser();
@@ -27,68 +28,11 @@ const HomePage: React.FC = () => {
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Track your progress, discover new stories, and build lasting reading habits
             </p>
-
-            {/* Streak Badge */}
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 mb-12">
-              <div className="text-2xl">🔥</div>
-              <div>
-                <div className="text-2xl font-bold">{mockUser.streak.current}</div>
-                <div className="text-xs opacity-90">Day Streak</div>
-              </div>
-              <div className="text-xs opacity-75">
-                Best: {mockUser.streak.best} days
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center space-x-3">
-              <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl">
-                <BookOpen className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {mockUser.goals.currentProgress}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Books Read</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center space-x-3">
-              <div className="p-3 bg-green-100 dark:bg-green-900 rounded-xl">
-                <Target className="h-6 w-6 text-green-600 dark:text-green-400" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {Math.round((mockUser.goals.currentProgress / mockUser.goals.booksPerYear) * 100)}%
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Year Goal</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-200">
-            <div className="flex items-center space-x-3">
-              <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-xl">
-                <TrendingUp className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {mockUser.goals.pagesPerDay}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Pages/Day</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Tracker/>
 
       {/* Featured Books Carousel */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
