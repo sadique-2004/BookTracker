@@ -1,37 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, BookOpen, Target, TrendingUp, Sparkles, Star } from 'lucide-react';
-import {useRef, useEffect} from 'react';
-import Typed from 'typed.js';
-
 import { mockUser, featuredBooks, trendingGenres } from '../utils/mockData';
 import { useUser } from "@clerk/clerk-react";
 import Tracker from "./../components/Tracker"
 
 const HomePage: React.FC = () => {
   const { user } = useUser();
-  const typedElement = useRef(null);
-
-  useEffect(() => {
-    const options = {
-      strings: [
-        "Your Reading Journey",
-        "Track Your Progress",
-        "Highlight Your Favorite Quotes",
-        "Share Reviews with Friends",
-        "Discover New Books",
-        "Celebrate Reading Streaks" 
-      ], 
-      typeSpeed: 90, 
-      backSpeed: 50, 
-      loop: true, 
-    };
-
-   const typed = new Typed(typedElement.current, options);
-    return () => {
-      typed.destroy(); 
-    }
-  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
       {/* Hero Section */}
@@ -44,8 +19,10 @@ const HomePage: React.FC = () => {
                 Welcome back, {user?.username}!
               </span>
             </div>
+            
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-              <span ref={typedElement} className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> </span>
+              Your Reading
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Journey</span>
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
