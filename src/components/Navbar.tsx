@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Library, PenTool, Settings, Menu, X, Flame, User, LogIn } from 'lucide-react';
+import { BookOpen, Home, Library, BookHeart, PenTool, Settings, Menu, X, Flame, User, LogIn } from 'lucide-react';
+
 import { useTheme } from '../contexts/ThemeContext';
 import { mockUser } from '../utils/mockData';
 import {
@@ -19,7 +20,7 @@ const Navbar: React.FC = () => {
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Library', href: '/library', icon: Library },
-    { name: 'Feature', href: '/feature', icon: Library },
+    { name: 'Feature', href: '/feature', icon: BookHeart },
     { name: 'Review', href: '/review', icon: PenTool },
     { name: 'Settings', href: '/settings', icon: Settings },
   ];
