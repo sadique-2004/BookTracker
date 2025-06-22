@@ -146,7 +146,7 @@ export default function StreakChart({ currentStreak, bestStreak }: StreakChartPr
   };
 
   return (
-    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+    <div className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg border border-gray-100">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-900">Streak Progress</h3>
         <div className="text-sm text-gray-500">Last 30 days</div>

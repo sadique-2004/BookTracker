@@ -61,7 +61,7 @@ export default function StreakStats({
         return (
           <div
             key={index}
-            className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="bg-white dark:bg-gray-700 dark:text-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <div className="flex items-center justify-between mb-4">
               <div className={`p-2 rounded-lg ${stat.color}`}>
@@ -79,7 +79,7 @@ export default function StreakStats({
               <div className="text-sm font-medium text-gray-700 mb-1">
                 {stat.label}
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-gray-200  rounded-full h-2">
                 <div
                   className={`h-2 rounded-full transition-all duration-700 ease-out ${stat.color}`}
                   style={{ width: `${Math.min(stat.progress, 100)}%` }}

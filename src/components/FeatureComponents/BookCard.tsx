@@ -68,7 +68,7 @@ export const BookCard: React.FC<BookCardProps> = ({ book, similarBooks }) => {
   return (
     <>
       <div
-        className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-1"
+        className="group bg-white dark:bg-gray-700  rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-1"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -113,10 +113,10 @@ export const BookCard: React.FC<BookCardProps> = ({ book, similarBooks }) => {
 
         {/* Book Info */}
         <div className="p-6">
-          <h3 className="font-bold text-xl text-gray-900 mb-2 leading-tight">
+          <h3 className="font-bold text-xl text-gray-900 dark:text-gray-100 mb-2 leading-tight">
             {book.title}
           </h3>
-          <p className="text-gray-600 mb-3">
+          <p className="text-gray-600 dark:text-gray-100 mb-3">
             by {book.author}
           </p>
           
@@ -136,7 +136,7 @@ export const BookCard: React.FC<BookCardProps> = ({ book, similarBooks }) => {
           </span>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+          <p className="text-gray-600 dark:text-gray-100 text-sm leading-relaxed line-clamp-3">
             {book.description}
           </p>
         </div>
