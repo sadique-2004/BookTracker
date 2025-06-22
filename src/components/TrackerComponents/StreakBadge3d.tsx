@@ -48,7 +48,7 @@ const RotatingBadge = ({ current, best }: StreakBadge3DProps) => {
 
 export default function StreakBadge3D({ current, best }: StreakBadge3DProps) {
   return (
-    <div className="w-full h-[400px] rounded-xl shadow-lg overflow-hidden">
+    <div className="w-full h-[400px] dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden">
       <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
         <color attach="background" args={['#111']} />
         <ambientLight intensity={0.7} />
